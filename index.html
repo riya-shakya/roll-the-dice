@@ -7,27 +7,44 @@
 
     <link rel="stylesheet" href="./output.css">
 
+    <script src="./index.js" defer></script>
+
 </head>
 <body>
     <!-- -- Heading Roll the Dice -- -->
-    <h1 class="p-5 font-serif italic font-medium text-center text-blue">Roll the 
+    <h1 id = "roll" class="p-5 font-serif italic font-medium text-center text-blue">Roll the 
         <span class="uppercase not-italic text-pink">dice</span>
     </h1>
 
     <!-- -- Container for the two players div -- -->
-    <div class="flex flex-row flex-wrap gap-x-8 h-[70vh] ">
+    <div class="flex flex-row flex-wrap gap-x-8 h-[70vh]">
         
         <!-- -- Container for player 1-->
-        <div class="flex-1 bg-yellow-blur border-[20px] border-yellow">
+        <div class="relative flex-1 bg-yellow-blur border-[20px] border-yellow rounded-md p-4">
+            <div class="size-full flex flex-col justify-evenly items-center">
+                <h2 class="capitalize text-center text-purple">player 1</h2>
+                <img id="diceImage1" src="./images/throwing dice.jpeg">
+                <h3 class="text-center">You rolled: <span id="numberSpan1">click to roll</span></h3>
+            </div>
         </div>
 
         <!-- -- Container for player 2-->
-        <div class="flex-1 bg-green-blur border-[20px] border-green">
+        <div class="flex-1 bg-green-blur border-[20px] border-green rounded-md p-4">
+            <div class="size-full flex flex-col justify-evenly items-center">
+                <h2 class="capitalize text-center text-purple">player 2</h2>
+                <img id="diceImage2" src="./images/throwing dice.jpeg">
+                <h3 class="text-center">You rolled: <span id="numberSpan2">click to roll</span></h3>
+            </div>
+        </div>
 
+        <!-- -- Result box -- -->
+        <div id = "resultBox" class="hidden absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 p-4 bg-pink border-4 border-gray-100 border-double">
+            <p class="text-gray-100"></p>
         </div>
     </div>
     <!-- -- Click to Roll Button -- -->
-    <button class="block mx-auto p-2 my-4 text-purple capitalize border border-2 border-purple border-double">click to roll</button>
+    <button id = "rollBtn" class="block my-4 mx-auto p-2 capitalize text-purple border-2 border-purple hover:bg-purple hover:text-gray-100 rounded-md">click to roll
+    </button>
 
 </body> 
 </html>
